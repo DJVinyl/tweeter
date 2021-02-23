@@ -8,12 +8,11 @@ const textArea = () => {
   $('textarea').keydown(() => {
     let charsRemain = $('#tweet-text').val().length;
     let remaining = parseInt(maxChars-charsRemain);
-    //const counter = $('<output></output>');
-    //counter.html(`${remaining}`);
-    console.log(maxChars, charsRemain, remaining);
     $('output.counter').text(remaining);
   })
-  // console.log(total);
-  // console.log(testarea);
-
+  $('textarea').keyup(() => {
+    let charsRemain = $('#tweet-text').val().length;
+    let remaining = parseInt(maxChars-charsRemain);
+    $('output.counter').text(remaining);
+  });
 };
