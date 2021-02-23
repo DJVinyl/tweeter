@@ -1,0 +1,29 @@
+textarea[name=text] {
+  display: flex;
+  width: 100%;
+  /* padding: 10px; */
+  border: 0;
+  background: transparent;
+  resize: none;
+  border-bottom: 2px solid black;
+}
+
+footer{
+  display: flex;
+  justify-content: space-between;
+  width: 100%
+}
+
+button {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #4056A1;
+  border: none;
+  color:  #FFFFFF;
+  font-family: 'Bungee', cursive;
+}
+output {
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Bungee', cursive;
+}

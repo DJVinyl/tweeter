@@ -1,0 +1,21 @@
+nav {
+  height: 90px; /* Suppose to be 120 according to compass but I like 90 px*/
+  width:  100%; 
+  background-color: #4056A1;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+}
+
+span {
+  margin-left: 1.5em;
+  margin-top: 1.5em; 
+  margin-bottom: 1.5em;
+  font-family: 'Bungee', cursive;
+}
+
+a {
+  margin-right: 1.5em;
+  margin-top: 1.5em; 
+  margin-bottom: 1.5em;
+}
