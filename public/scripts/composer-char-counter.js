@@ -2,7 +2,7 @@ $(document).ready(() => {
   textArea();
 });
 
-
+//This can be refactored;
 const textArea = () => {
  const maxChars = $('#tweet-text').attr('maxlength');
   $('textarea').keydown(() => {
