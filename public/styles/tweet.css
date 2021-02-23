@@ -2,6 +2,14 @@
   border-style: solid;
   width: 100%;
 }
+.tweet-container:hover {
+  box-shadow: 5px 5px grey;
+}
+
+.tweet-container:hover .tweeterUsername {
+  display: block;
+}
+
 .inner-container {
   margin-left: 1.5em;
   margin-bottom: 1.5em;
@@ -12,6 +20,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+.tweeterUsername {
+  display: none;
+}
+
 .tweet {
   width: 100%;
   display: flex;
