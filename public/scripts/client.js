@@ -33,12 +33,13 @@ const data = [
 $(document).ready(() => {
   renderTweets(data);
   submitNewTweet();
+  loadTweets();
 });
 
 const renderTweets = (tweets) => {
   for (let tweet of tweets) {
     let newTweet = createTweetElement(tweet);
-    $("ul").append(newTweet);
+    $("ul").prepend(newTweet);
   }
 };
 
@@ -70,11 +71,26 @@ const submitNewTweet = () => {
     const url = "/tweets";
     const data = $("#tweet-text").val();
     const dataSent = {text: data};
-    console.log(dataSent);
-
+    // console.log(dataSent);
     $.post(url,dataSent, (data, status) => {
-      console.log('Status: ' + status);
+      console.log('Status POST: ' + status);
     });
+  });
+};
 
-  })
+const loadTweets = () => {
+  $("form").submit((event) => {
+    event.preventDefault();
+    const url = "/tweets";
+    const formSubmit = $("#tweet-text").val();
+    if (formSubmit) {
+      $.get(url, (data, status) => {
+        console.log(data[data.length - 1]);
+        renderTweets([data[data.length - 1]]); // THIS IS TTHE LAST DATA THAT WE ADD TO THE /TWEET data returns the db obj
+        console.log("Status GET: " + status);
+      });
+    } else {
+      alert("Please enter a value for your Tweet");
+    }
+  });
 };
