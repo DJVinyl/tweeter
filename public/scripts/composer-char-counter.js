@@ -9,7 +9,8 @@ const textArea = () => {
     let charsRemain = $('#tweet-text').val().length;
     let remaining = parseInt(maxChars-charsRemain);
     $('output.counter').text(remaining);
-  })
+  });
+
   $('textarea').keyup(() => {
     let charsRemain = $('#tweet-text').val().length;
     let remaining = parseInt(maxChars-charsRemain);
