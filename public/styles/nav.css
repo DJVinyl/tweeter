@@ -3,8 +3,14 @@ nav {
   width:  100%; 
   background-color: #4056A1;
   color: #FFFFFF;
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
+}
+
+body {
+  margin-top: 90px;
 }
 
 span {
