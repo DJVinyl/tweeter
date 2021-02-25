@@ -73,10 +73,14 @@ const submitNewTweet = () => {
     const url = "/tweets";
     const data = $("#tweet-text").val();
     const dataSent = { text: data };
-    $.post(url, dataSent)
-      .then((req, response) => {
+    if (data.length <= 140){
+      $.post(url, dataSent).then((req, response) => {
         loadTweets(); // Ensures that Tweets get posted
-      })
+      });
+    } else {
+      $( ".error-flag" ).slideDown( "slow", function() {
+      });
+    }
   });
 };
 
@@ -86,9 +90,10 @@ const loadTweets = () => {
     const url = "/tweets";
     let $formSubmit = $("#tweet-text").val();
     $formSubmit = $formSubmit.trim();
-    if ($formSubmit) {
+    if ($formSubmit && $formSubmit.length <= 140) {
       $.get(url).then((req, response) => {
         $(".error-flag").hide();
+        $("#tweet-text").val('') // clears the textarea
         renderTweets(req);
       });
     } else {
