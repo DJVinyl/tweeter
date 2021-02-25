@@ -4,7 +4,7 @@ $(document).ready(() => {
 
 //This can be refactored;
 const textArea = () => {
- const maxChars = $('#tweet-text').attr('maxlength');
+ const maxChars = 140;
   $('textarea').keydown(() => {
     let charsRemain = $('#tweet-text').val().length;
     let remaining = parseInt(maxChars-charsRemain);
@@ -17,3 +17,5 @@ const textArea = () => {
     $('output.counter').text(remaining);
   });
 };
+
+

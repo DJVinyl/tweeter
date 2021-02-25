@@ -73,9 +73,9 @@ const submitNewTweet = () => {
     const url = "/tweets";
     const data = $("#tweet-text").val();
     const dataSent = { text: data };
-    // console.log(dataSent);
     $.post(url, dataSent)
       .then((req, response) => {
+        loadTweets(); // Ensures that Tweets get posted
       })
   });
 };
@@ -89,14 +89,10 @@ const loadTweets = () => {
     if ($formSubmit) {
       $.get(url).then((req, response) => {
         $(".error-flag").hide();
-        console.log(req);
         renderTweets(req);
       });
     } else {
-      //alert("Please enter a value for your Tweet");
-      //$(".error-flag").show();
       $( ".error-flag" ).slideDown( "slow", function() {
-        // Animation complete.
       });
     }
   });
