@@ -31,12 +31,14 @@ const data = [
 ];
 
 $(document).ready(() => {
+  $(".error-flag").hide();
   renderTweets(data);
-  submitNewTweet();
   loadTweets();
+  submitNewTweet()
 });
 
 const renderTweets = (tweets) => {
+  $("ul").empty();
   for (let tweet of tweets) {
     let newTweet = createTweetElement(tweet);
     $("ul").prepend(newTweet);
@@ -55,7 +57,7 @@ const createTweetElement = (tweetObj) => {
         <h3 class="full-Name">${tweetObj.user.name}</h3>
         <h3 class="tweeterUsername">${tweetObj.user.handle}</h3>
       </div>
-        <a class="tweet">${tweetObj.content.text}</a>
+        ${escape(tweetObj.content.text)}
         <hr class= "separator">
       <footer class= "tweet-date">${date}</footer>
     </article>
@@ -70,11 +72,11 @@ const submitNewTweet = () => {
     event.preventDefault();
     const url = "/tweets";
     const data = $("#tweet-text").val();
-    const dataSent = {text: data};
+    const dataSent = { text: data };
     // console.log(dataSent);
-    $.post(url,dataSent, (data, status) => {
-      console.log('Status POST: ' + status);
-    });
+    $.post(url, dataSent)
+      .then((req, response) => {
+      })
   });
 };
 
@@ -82,15 +84,26 @@ const loadTweets = () => {
   $("form").submit((event) => {
     event.preventDefault();
     const url = "/tweets";
-    const formSubmit = $("#tweet-text").val();
-    if (formSubmit) {
-      $.get(url, (data, status) => {
-        console.log(data[data.length - 1]);
-        renderTweets([data[data.length - 1]]); // THIS IS TTHE LAST DATA THAT WE ADD TO THE /TWEET data returns the db obj
-        console.log("Status GET: " + status);
+    let $formSubmit = $("#tweet-text").val();
+    $formSubmit = $formSubmit.trim();
+    if ($formSubmit) {
+      $.get(url).then((req, response) => {
+        $(".error-flag").hide();
+        console.log(req);
+        renderTweets(req);
       });
     } else {
-      alert("Please enter a value for your Tweet");
+      //alert("Please enter a value for your Tweet");
+      //$(".error-flag").show();
+      $( ".error-flag" ).slideDown( "slow", function() {
+        // Animation complete.
+      });
     }
   });
+};
+
+const escape =  function(str) {
+  let a = document.createElement('a');
+  a.appendChild(document.createTextNode(str));
+  return a.innerHTML;
 };

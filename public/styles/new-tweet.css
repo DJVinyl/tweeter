@@ -28,3 +28,10 @@ output {
   font-family: 'Bungee', cursive;
 }
 
+.error-flag {
+  display: flex;
+  justify-content: center;
+  border-color: red;
+  color: red;
+  border-style: solid;
+}
