@@ -60,9 +60,14 @@ const createTweetElement = (tweetObj) => {
         </div>
         <h3 class="tweeterUsername">${tweetObj.user.handle}</h3>
       </div>
+      <a class="tweet-text">
         ${escape(tweetObj.content.text)}
-        <hr class= "separator">
-      <footer class= "tweet-date">${date}</footer>
+      </a>
+      <hr class= "separator">
+      <footer class= "tweet-footer">
+        <a class= 'tweet-date'>${date}</a>
+        <a class= 'emblems'>like/share/flag</a>
+      </footer>
     </article>
   </section>
   <footer class= 'feed-space'></footer>
