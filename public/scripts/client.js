@@ -66,7 +66,11 @@ const createTweetElement = (tweetObj) => {
       <hr class= "separator">
       <footer class= "tweet-footer">
         <a class= 'tweet-date'>${date}</a>
-        <a class= 'emblems'>like/share/flag</a>
+        <a class= 'emblems'>
+          <img src='/images/heart.png' />
+          <img src='/images/share.png' />
+          <img src='/images/flags.png' />  
+        </a>
       </footer>
     </article>
   </section>
