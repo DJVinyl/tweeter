@@ -17,6 +17,7 @@
     background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
   }
 
+  
   body {
     margin-top: 90px;
   }
@@ -69,7 +70,7 @@
 
 
 
-@media only screen and (min-width: 1235px) {
+@media only screen and (min-width: 1280px) {
   nav {
     height: 90px;
     width: 100%;
