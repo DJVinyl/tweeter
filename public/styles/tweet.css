@@ -21,6 +21,10 @@
   justify-content: space-between;
 }
 
+.full-Name{
+  margin-left: 1em;
+}
+
 .tweeterUsername {
   display: none;
 }

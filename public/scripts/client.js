@@ -53,8 +53,11 @@ const createTweetElement = (tweetObj) => {
   <section class="tweet-container">
     <article class="inner-container">
       <div class='name-bar'>
-        <!-- ADD IMG Element here -->
-        <h3 class="full-Name">${tweetObj.user.name}</h3>
+      <!-- ADD IMG Element here -->
+        <div class='avatar'>
+          <img src="${tweetObj.user.avatars}" />
+          <h3 class="full-Name">${tweetObj.user.name}</h3>
+        </div>
         <h3 class="tweeterUsername">${tweetObj.user.handle}</h3>
       </div>
         ${escape(tweetObj.content.text)}
