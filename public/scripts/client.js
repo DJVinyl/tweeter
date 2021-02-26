@@ -34,7 +34,7 @@ $(document).ready(() => {
   $(".error-flag").hide();
   renderTweets(data);
   loadTweets();
-  submitNewTweet()
+  submitNewTweet();
 });
 
 const renderTweets = (tweets) => {
@@ -85,12 +85,12 @@ const submitNewTweet = () => {
     const url = "/tweets";
     const data = $("#tweet-text").val();
     const dataSent = { text: data };
-    if (data.length <= 140){
+    if (data.length <= 140) {
       $.post(url, dataSent).then((req, response) => {
         loadTweets(); // Ensures that Tweets get posted
       });
     } else {
-      $( ".error-flag" ).slideDown( "slow", function() {
+      $(".error-flag").slideDown("slow", function() {
       });
     }
   });
@@ -105,11 +105,11 @@ const loadTweets = () => {
     if ($formSubmit && $formSubmit.length <= 140) {
       $.get(url).then((req, response) => {
         $(".error-flag").hide();
-        $("#tweet-text").val('') // clears the textarea
+        $("#tweet-text").val(''); // clears the textarea
         renderTweets(req);
       });
     } else {
-      $( ".error-flag" ).slideDown( "slow", function() {
+      $(".error-flag").slideDown("slow", function() {
       });
     }
   });

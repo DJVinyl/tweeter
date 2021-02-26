@@ -3,10 +3,11 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-
-
     <!-- Metatag for viewport -->
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
 
     <!-- External CSS -->
     <link
@@ -40,11 +41,12 @@
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
+    <!-- Top nav bar -->
     <nav>
       <span class="title">tweeter</span>
-      <button id="Compose" title="Write a new Tweet"><span><b>Write</b> a new tweet</span></button>
-      <!-- Compose</button>  -->
+      <button id="Compose" title="Write a new Tweet">
+        <span><b>Write</b> a new tweet</span>
+      </button>
     </nav>
 
     <header class="profile">
@@ -60,7 +62,9 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <a class="error-flag">Incorrect Submission - Please try submiting an actual tweet</a>
+        <a class="error-flag">
+          Incorrect Submission - Please try submiting an actual tweet
+          </a>
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
           <textarea
@@ -71,22 +75,27 @@
           <div>
             <footer>
               <button type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
+              <output name="counter" class="counter" for="tweet-text"
+              >140</output>
             </footer>
           </div>
         </form>
       </section>
-      <br>
+      <br />
 
-    <ul>
-      <!-- Tweet HTML -->
-      <!-- Rendered in client.js -->
-      <!-- End of Tweet HTML -->
-    </ul>
-    <button id="myBtn" title="Go to top">Top</button>
+      <ul>
+        <!-- Tweet HTML -->
+        <!-- Rendered in client.js -->
+        <!-- End of Tweet HTML -->
+      </ul>
+      <button id="myBtn" title="Go to top">Top</button>
     </main>
   </body>
-  <footer class='logo-credits'>
-    <div>Icons made by  <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+  <footer class="logo-credits">
+    <div>
+      Icons made by
+      <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
+      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </div>
   </footer>
 </html>

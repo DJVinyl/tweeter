@@ -8,9 +8,6 @@ textarea[name=text] {
   border-bottom: 2px solid black;
 }
 
-header {
-  
-}
 footer{
   margin-top: 0.5em;
   display: flex;

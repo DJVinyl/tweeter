@@ -3,12 +3,6 @@ div {
   justify-content: center;
   align-items: center;
 } 
-/* 
-.heading2 {
-  display: flex;
-  justify-content: flex-end;
-  align-content: flex-start;
-} */
 
 #Compose {
   display: flex;
