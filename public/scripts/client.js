@@ -105,8 +105,8 @@ const loadTweets = () => {
     if ($formSubmit && $formSubmit.length <= 140) {
       $.get(url).then((req, response) => {
         $(".error-flag").hide();
-        $("#tweet-text").val(''); // clears the textarea
         renderTweets(req);
+        $("#tweet-text").val(''); // clears the textarea
       });
     } else {
       $(".error-flag").slideDown("slow", function() {
