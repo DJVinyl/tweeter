@@ -27,6 +27,16 @@ This repository is the starter code for the project: Students will fork and clon
 - Add Database Implementation SQL server
 - Add server-side storage of Tweets
 
+
+## Pictures of App
+
+!['Front Page'](https://raw.githubusercontent.com/DJVinyl/tweeter/master/Pictures%20for%20GitHub/Front%20Page.png);
+
+!['Front Page Tablet'](https://raw.githubusercontent.com/DJVinyl/tweeter/master/Pictures%20for%20GitHub/Tablet%20Site.png);
+
+!['Tweet Submission'](https://raw.githubusercontent.com/DJVinyl/tweeter/master/Pictures%20for%20GitHub/A%20New%20Tweet.png);
+
+!['Error Message'](https://raw.githubusercontent.com/DJVinyl/tweeter/master/Pictures%20for%20GitHub/Error%20message.png);
 ____________________________
 # Requirements
 
