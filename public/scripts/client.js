@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 const data = [
   {
     user: {
@@ -45,10 +46,65 @@ const renderTweets = (tweets) => {
   }
 };
 
+const timeAgo = (current,previous) => {
+  let msPerMinute = 60 * 1000;
+  let msPerHour = msPerMinute * 60;
+  let msPerDay = msPerHour * 24;
+  let msPerMonth = msPerDay * 30;
+  let msPerYear = msPerDay * 365;
+
+  let elapsed = current - previous; // in milliseconds
+
+  if (elapsed < msPerMinute) {
+    let result = Math.round(elapsed / 1000);
+    if (result === 1) {
+      return result + " second ago";
+    } else {
+      return result + " seconds ago";
+    }
+  } else if (elapsed < msPerHour) {
+    let result = Math.round(elapsed / msPerMinute);
+    if (result === 1) {
+      return result + " minute ago";
+    } else {
+      return result + " minutes ago";
+    }
+  } else if (elapsed < msPerDay) {
+    let result = Math.round(elapsed / msPerHour);
+    if (result === 1) {
+      return result + " hour ago";
+    } else {
+      return result + " hours ago";
+    }
+  } else if (elapsed < msPerMonth) {
+    let result = Math.round(elapsed / msPerDay);
+    if (result === 1) {
+      return "approximately "+ result + " day ago";
+    } else {
+      return "approximately "+ result + " days ago";
+    }
+  } else if (elapsed < msPerYear) {
+    let result = Math.round(elapsed / msPerMonth);
+    if (result === 1) {
+      return "approximately "+ result + " month ago";
+    } else {
+      return "approximately "+ result + " months ago";
+    }
+  } else {
+    let result = Math.round(elapsed / msPerYear);
+    if (result === 1) {
+      return "approximately "+ result + " year ago";
+    } else {
+      return "approximately "+ result + " years ago";
+    }
+  }
+}
+
+
 const createTweetElement = (tweetObj) => {
   const newTweet = $("<li></li>");
-  let date = new Date(parseInt(tweetObj.created_at));
-  date = date.toLocaleString();
+  let tweetDate = new Date(parseInt(tweetObj.created_at));
+  let timeElapsed = timeAgo(Date.now(),tweetDate)
   newTweet.html(`
   <section class="tweet-container">
     <article class="inner-container">
@@ -65,7 +121,7 @@ const createTweetElement = (tweetObj) => {
       </a>
       <hr class= "separator">
       <footer class= "tweet-footer">
-        <a class= 'tweet-date'>${date}</a>
+        <a class= 'tweet-date'>${timeElapsed}</a>
         <a class= 'emblems'>
           <img src='/images/heart.png' />
           <img src='/images/share.png' />
