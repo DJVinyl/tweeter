@@ -22,20 +22,21 @@
     margin-top: 90px;
   }
 
-  span {
+  nav span {
     margin-left: 1.5em;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     font-family: "Bungee", cursive;
   }
 
-  a {
+  a.tweet-text {
     margin-right: 1.5em;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
+    overflow-wrap: anywhere;
   }
 
-  ul {
+  #tweet-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -87,6 +88,13 @@
     margin-top: 10vh;
   }
 
+  nav span {
+    margin-left: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-family: "Bungee", cursive;
+  }
+
   .profile {
     height: 50vh;
     width: 18em;
@@ -103,13 +111,6 @@
     width: 36em;
   }
 
-  span {
-    margin-left: 1.5em;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-    font-family: "Bungee", cursive;
-  }
-
   a.tweet-text {
     margin-right: 1.5em;
     margin-top: 1.5em;
@@ -117,7 +118,7 @@
     overflow-wrap: anywhere;
   }
 
-  ul {
+  #tweet-list {
     list-style-type: none;
     margin: 0;
     padding: 0;

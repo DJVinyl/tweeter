@@ -79,32 +79,31 @@ const timeAgo = (current,previous) => {
   } else if (elapsed < msPerMonth) {
     let result = Math.round(elapsed / msPerDay);
     if (result === 1) {
-      return "approximately "+ result + " day ago";
+      return "approximately " + result + " day ago";
     } else {
-      return "approximately "+ result + " days ago";
+      return "approximately " + result + " days ago";
     }
   } else if (elapsed < msPerYear) {
     let result = Math.round(elapsed / msPerMonth);
     if (result === 1) {
-      return "approximately "+ result + " month ago";
+      return "approximately " + result + " month ago";
     } else {
-      return "approximately "+ result + " months ago";
+      return "approximately " + result + " months ago";
     }
   } else {
     let result = Math.round(elapsed / msPerYear);
     if (result === 1) {
-      return "approximately "+ result + " year ago";
+      return "approximately " + result + " year ago";
     } else {
-      return "approximately "+ result + " years ago";
+      return "approximately " + result + " years ago";
     }
   }
-}
-
+};
 
 const createTweetElement = (tweetObj) => {
   const newTweet = $("<li></li>");
   let tweetDate = new Date(parseInt(tweetObj.created_at));
-  let timeElapsed = timeAgo(Date.now(),tweetDate)
+  let timeElapsed = timeAgo(Date.now(),tweetDate);
   newTweet.html(`
   <section class="tweet-container">
     <article class="inner-container">
