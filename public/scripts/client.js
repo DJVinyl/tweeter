@@ -39,10 +39,10 @@ $(document).ready(() => {
 });
 
 const renderTweets = (tweets) => {
-  $("ul").empty();
+  $("#tweet-list").empty();
   for (let tweet of tweets) {
     let newTweet = createTweetElement(tweet);
-    $("ul").prepend(newTweet);
+    $("#tweet-list").prepend(newTweet);
   }
 };
 
